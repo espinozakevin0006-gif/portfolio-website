@@ -1,269 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wearable Ankle Motion Tracking System | Kevin Espinoza</title>
-  <style>
-    * { box-sizing: border-box; }
+  <meta charset="UTF-8">
+  <title>Ankle Tracker Project</title>
 
+  <style>
     body {
+      font-family: Arial;
       margin: 0;
-      font-family: Arial, sans-serif;
       background: #f3f4f6;
-      color: #111827;
-      line-height: 1.65;
     }
 
     header {
-      background: linear-gradient(135deg, #0f172a, #1e293b);
+      background: #0f172a;
       color: white;
-      padding: 60px 20px 50px;
+      padding: 40px;
       text-align: center;
-    }
-
-    header h1 {
-      margin: 0 0 12px;
-      font-size: 2.6rem;
-    }
-
-    header p {
-      max-width: 800px;
-      margin: 0 auto;
-      color: #dbeafe;
-      font-size: 1.05rem;
-    }
-
-    .top-link {
-      display: inline-block;
-      margin-top: 22px;
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      border: 1px solid rgba(255,255,255,0.35);
-      padding: 10px 16px;
-      border-radius: 8px;
-    }
-
-    .top-link:hover {
-      background: rgba(255,255,255,0.08);
     }
 
     main {
-      max-width: 1050px;
+      max-width: 900px;
       margin: 40px auto;
-      padding: 0 20px 40px;
-    }
-
-    .card {
       background: white;
-      border-radius: 16px;
-      padding: 32px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      margin-bottom: 28px;
-    }
-
-    h2 {
-      font-size: 1.75rem;
-      margin-top: 0;
-      margin-bottom: 18px;
-      color: #0f172a;
-      border-bottom: 2px solid #e5e7eb;
-      padding-bottom: 10px;
-    }
-
-    h3 {
-      margin-top: 0;
-      color: #0f172a;
-    }
-
-    ul {
-      padding-left: 22px;
-      margin-bottom: 0;
-    }
-
-    li {
-      margin-bottom: 8px;
-    }
-
-    .project-image {
-      display: block;
-      width: 100%;
-      max-width: 780px;
-      margin: 16px auto 8px;
+      padding: 30px;
       border-radius: 12px;
-      border: 1px solid #d1d5db;
-      padding: 8px;
-      background: #f8fafc;
     }
 
-    .caption {
-      text-align: center;
-      font-size: 0.95rem;
-      color: #4b5563;
-      margin-bottom: 18px;
+    img {
+      width: 100%;
+      margin: 15px 0;
+      border-radius: 10px;
     }
 
-    .button-row {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 18px;
+    a {
+      color: blue;
     }
 
-    .button-link {
-      display: inline-block;
-      background: #2563eb;
-      color: white;
-      padding: 11px 18px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .button-link:hover {
-      background: #1d4ed8;
-    }
-
-    .button-outline {
-      display: inline-block;
-      background: transparent;
-      color: #2563eb;
-      padding: 11px 18px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      border: 1px solid #2563eb;
-    }
-
-    .button-outline:hover {
-      background: #eff6ff;
-    }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 22px;
-    }
-
-    @media (min-width: 800px) {
-      .two-col {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    .footer-note {
-      text-align: center;
-      color: #6b7280;
-      font-size: 0.9rem;
-      margin-top: 10px;
-    }
   </style>
 </head>
+
 <body>
-  <header>
-    <h1>Wearable Ankle Motion Tracking System</h1>
-    <p>
-      Embedded wearable sensing prototype that measures ankle motion using an MPU-6050 and ESP32, processes motion data in real time, and streams live results to a browser dashboard over Wi-Fi.
-    </p>
-    <a href="./index.html#projects" class="top-link">← Back to Portfolio</a>
-  </header>
 
-  <main>
-    <section class="card">
-      <h2>Project Overview</h2>
-      <p>
-        This project was built as an embedded biomechanics prototype for ankle motion tracking. The system uses an MPU-6050 inertial measurement unit and an ESP32 microcontroller to capture motion data, estimate ankle movement, detect motion events, and display live results in a browser-based dashboard.
-      </p>
-      <p>
-        The goal was to build more than a basic sensor demo. The project was structured as a complete embedded system with hardware integration, real-time signal processing, Wi-Fi communication, and live visualization.
-      </p>
+<header>
+  <h1>Wearable Ankle Motion Tracking System</h1>
+  <p>Embedded motion tracking + real-time dashboard</p>
+</header>
 
-      <div class="button-row">
-        <a href="https://github.com/espinozakevin0006-gif/ankle-motion-tracker" target="_blank" class="button-link">View GitHub Repository</a>
-        <a href="./index.html#contact" class="button-outline">Contact</a>
-      </div>
-    </section>
+<main>
 
-    <section class="card">
-      <h2>What the System Does</h2>
-      <ul>
-        <li>Reads 3-axis acceleration and gyroscope data from the MPU-6050</li>
-        <li>Uses I2C communication between the ESP32 and the sensor</li>
-        <li>Performs angle estimation from inertial sensor readings</li>
-        <li>Implements threshold-based motion detection logic</li>
-        <li>Tracks motion events, step count, and cadence</li>
-        <li>Hosts a browser-accessible dashboard through the ESP32 over Wi-Fi</li>
-        <li>Displays live motion values and plots in real time</li>
-      </ul>
-    </section>
+<h2>Overview</h2>
+<p>
+ESP32 + MPU6050 system that tracks ankle motion and streams real-time data to a browser dashboard.
+</p>
 
-    <section class="card two-col">
-      <div>
-        <h2>Engineering Work Completed</h2>
-        <ul>
-          <li>Integrated the MPU-6050 with the ESP32 at the hardware and firmware level</li>
-          <li>Built embedded code for sensor readout and motion data handling</li>
-          <li>Implemented real-time calculations for angle and motion state</li>
-          <li>Created browser-based data output from the ESP32</li>
-          <li>Tested the system as a working breadboard prototype</li>
-        </ul>
-      </div>
+<h2>Features</h2>
+<ul>
+<li>Angle estimation</li>
+<li>Step counting</li>
+<li>Cadence detection</li>
+<li>Wi-Fi data streaming</li>
+</ul>
 
-      <div>
-        <h2>Technologies Used</h2>
-        <ul>
-          <li>ESP32</li>
-          <li>MPU-6050 IMU</li>
-          <li>C/C++</li>
-          <li>Arduino IDE</li>
-          <li>I2C communication</li>
-          <li>Embedded Wi-Fi web server</li>
-          <li>HTML, CSS, JavaScript for dashboard display</li>
-        </ul>
-      </div>
-    </section>
+<h2>Hardware</h2>
+<img src="./hardware_setup.jpeg">
 
-    <section class="card">
-      <h2>Hardware Prototype</h2>
-      <img src="./hardware_setup.jpeg" alt="ESP32 and MPU-6050 hardware prototype" class="project-image">
-      <div class="caption">Breadboard prototype used for sensor integration, embedded programming, and system testing.</div>
-    </section>
+<h2>System Diagram</h2>
+<img src="./system_diagram.png">
 
-    <section class="card">
-      <h2>System Architecture</h2>
-      <img src="./system_diagram.png" alt="System architecture diagram" class="project-image">
-      <div class="caption">System-level flow from inertial sensing and on-device processing to Wi-Fi-based live visualization.</div>
-    </section>
+<h2>Dashboard</h2>
+<img src="./dashboard_screenshot.png">
 
-    <section class="card">
-      <h2>Live Dashboard</h2>
-      <img src="./dashboard_screenshot.png" alt="Live ankle tracker dashboard" class="project-image">
-      <div class="caption">Browser dashboard displaying real-time angle, gyroscope values, step count, and cadence.</div>
-    </section>
+<h2>GitHub</h2>
+<a href="https://github.com/espinozakevin0006-gif/ankle-motion-tracker">
+View Code
+</a>
 
-    <section class="card">
-      <h2>Why This Project Matters</h2>
-      <p>
-        This project demonstrates embedded systems development beyond simple output control. It combines sensor interfacing, real-time data processing, motion analysis, and user-facing visualization into a single system.
-      </p>
-      <p>
-        It also creates a strong foundation for future work in wearable sensing, biomechanics, robotics, feedback systems, and real-time monitoring applications.
-      </p>
-    </section>
-
-    <section class="card">
-      <h2>Next Improvements</h2>
-      <ul>
-        <li>Add signal filtering to improve angle stability</li>
-        <li>Improve motion event detection to reduce false positives</li>
-        <li>Add data logging for later analysis</li>
-        <li>Integrate haptic and LED feedback into the active system</li>
-        <li>Move from breadboard prototype to a compact wearable enclosure</li>
-      </ul>
-    </section>
-
-    <p class="footer-note">Project page hosted with GitHub Pages</p>
-  </main>
+</main>
 </body>
 </html>
