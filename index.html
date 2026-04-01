@@ -4,10 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kevin Espinoza | Engineering Portfolio</title>
+
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -26,19 +27,27 @@
 
     header h1 {
       margin: 0;
-      font-size: 2.8rem;
+      font-size: 3rem;
       font-weight: 700;
     }
 
     header p {
-      max-width: 750px;
+      max-width: 780px;
       margin: 18px auto 0;
-      font-size: 1.08rem;
+      font-size: 1.05rem;
       color: #dbeafe;
     }
 
+    .hero-buttons {
+      margin-top: 25px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
     main {
-      max-width: 1000px;
+      max-width: 1050px;
       margin: 40px auto;
       padding: 0 20px 40px;
     }
@@ -53,7 +62,6 @@
 
     h2 {
       font-size: 1.8rem;
-      margin-top: 0;
       margin-bottom: 18px;
       color: #0f172a;
       border-bottom: 2px solid #e5e7eb;
@@ -62,19 +70,13 @@
 
     h3 {
       font-size: 1.35rem;
-      margin-top: 0;
       margin-bottom: 10px;
-      color: #111827;
     }
 
     h4 {
-      margin: 22px 0 10px;
+      margin: 20px 0 10px;
       font-size: 1rem;
       color: #0f172a;
-    }
-
-    p {
-      margin: 0 0 16px;
     }
 
     .skills-grid {
@@ -86,14 +88,8 @@
     .skill-group {
       background: #f8fafc;
       border-left: 4px solid #2563eb;
-      padding: 16px 18px;
+      padding: 16px;
       border-radius: 10px;
-    }
-
-    .skill-group strong {
-      display: block;
-      margin-bottom: 6px;
-      color: #0f172a;
     }
 
     .project {
@@ -101,57 +97,62 @@
       border-bottom: 1px solid #e5e7eb;
     }
 
-    .project:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-
     .summary {
-      font-size: 1rem;
-      color: #1f2937;
       margin-bottom: 14px;
     }
 
     ul {
-      margin: 0 0 18px 0;
       padding-left: 22px;
+      margin-bottom: 18px;
     }
 
-    li {
-      margin-bottom: 8px;
-    }
+    li { margin-bottom: 6px; }
 
     .project-image {
       display: block;
       width: 100%;
-      max-width: 700px;
-      margin: 12px auto 28px;
-      background: #f8fafc;
-      border: 1px solid #d1d5db;
+      max-width: 760px;
+      margin: 12px auto 8px;
       border-radius: 12px;
-      padding: 8px;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+      border: 1px solid #d1d5db;
+      padding: 6px;
+      background: #f8fafc;
+    }
+
+    .caption {
+      text-align: center;
+      font-size: 0.95rem;
+      color: #4b5563;
+      margin-bottom: 20px;
     }
 
     .button-link {
       display: inline-block;
       background: #2563eb;
       color: white;
+      padding: 10px 16px;
+      border-radius: 8px;
       text-decoration: none;
-      padding: 12px 18px;
-      border-radius: 10px;
       font-weight: 600;
-      transition: background 0.2s ease;
     }
 
     .button-link:hover {
       background: #1d4ed8;
     }
 
+    .contact-item {
+      margin-bottom: 12px;
+    }
+
+    .contact-item a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
     .footer-note {
       text-align: center;
       color: #6b7280;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       margin-top: 10px;
     }
 
@@ -159,120 +160,125 @@
       .skills-grid {
         grid-template-columns: repeat(3, 1fr);
       }
-
-      header h1 {
-        font-size: 3.2rem;
-      }
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <h1>Kevin Espinoza</h1>
-    <p>
-      Electrical Engineering student focused on embedded systems, robotics, and sensor-based hardware design.
-      Building projects that combine real-time sensing, microcontroller programming, and hardware-software integration.
+
+<header>
+  <h1>Kevin Espinoza</h1>
+  <p>
+    Electrical Engineering student focused on embedded systems, robotics, and sensor-based hardware design.
+    Building real-time systems that connect sensing, computation, and physical interaction.
+  </p>
+
+  <div class="hero-buttons">
+    <a href="#projects" class="button-link">View Projects</a>
+    <a href="#contact" class="button-link">Contact</a>
+  </div>
+</header>
+
+<main>
+
+<section class="card">
+  <h2>About</h2>
+  <p>
+    I develop embedded systems that connect sensors, microcontrollers, and control logic into functional hardware prototypes.
+    My work focuses on real-time data acquisition and translating physical signals into meaningful system behavior.
+  </p>
+</section>
+
+<section class="card">
+  <h2>Skills</h2>
+  <div class="skills-grid">
+
+    <div class="skill-group">
+      <strong>Languages</strong><br>
+      C/C++<br>
+      Python<br>
+      Verilog
+    </div>
+
+    <div class="skill-group">
+      <strong>Tools</strong><br>
+      Arduino IDE<br>
+      GitHub<br>
+      Quartus<br>
+      ESP32<br>
+      Breadboarding
+    </div>
+
+    <div class="skill-group">
+      <strong>Concepts</strong><br>
+      Embedded systems<br>
+      Sensor interfacing<br>
+      Digital logic<br>
+      Real-time control<br>
+      Hardware-software integration
+    </div>
+
+  </div>
+</section>
+
+<section class="card" id="projects">
+  <h2>Projects</h2>
+
+  <div class="project">
+    <h3>Wearable Ankle Motion Tracking System</h3>
+
+    <p class="summary">
+      Embedded wearable system that captures ankle motion using an IMU and streams real-time data to a browser dashboard over Wi-Fi.
     </p>
-  </header>
 
-  <main>
-    <section class="card">
-      <h2>About</h2>
-      <p>
-        I develop embedded systems that connect sensors, microcontrollers, and control logic into functional hardware prototypes.
-        My work focuses on real-time data acquisition, device-level programming, and translating physical signals into usable system behavior.
-      </p>
-    </section>
+    <ul>
+      <li>MPU-6050 + ESP32 sensor integration over I2C</li>
+      <li>Angle estimation, motion detection, step counting, cadence</li>
+      <li>Real-time Wi-Fi dashboard with live data visualization</li>
+    </ul>
 
-    <section class="card">
-      <h2>Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-group">
-          <strong>Languages</strong>
-          C/C++<br>
-          Python<br>
-          Verilog
-        </div>
+    <h4>Hardware Prototype</h4>
+    <img src="./hardware_setup.jpeg" class="project-image">
+    <div class="caption">Breadboard prototype with ESP32 and MPU-6050</div>
 
-        <div class="skill-group">
-          <strong>Tools</strong>
-          Arduino IDE<br>
-          GitHub<br>
-          Quartus<br>
-          ESP32<br>
-          Breadboarding
-        </div>
+    <h4>System Architecture</h4>
+    <img src="./system_diagram.svg" class="project-image">
+    <div class="caption">Sensor → processing → Wi-Fi → dashboard flow</div>
 
-        <div class="skill-group">
-          <strong>Concepts</strong>
-          Embedded systems<br>
-          Sensor interfacing<br>
-          Digital logic<br>
-          Real-time control<br>
-          Hardware-software integration
-        </div>
-      </div>
-    </section>
+    <h4>Live Dashboard</h4>
+    <img src="./dashboard_screenshot.png" class="project-image">
+    <div class="caption">Real-time visualization of motion data</div>
 
-    <section class="card">
-      <h2>Projects</h2>
+    <a href="https://github.com/espinozakevin0006-gif/ankle-motion-tracker"
+       target="_blank"
+       class="button-link">
+      View Project Code
+    </a>
+  </div>
 
-      <div class="project">
-        <h3>Wearable Ankle Motion Tracking System</h3>
+</section>
 
-        <p class="summary">
-          Embedded wearable system that captures ankle motion using an IMU and streams real-time biomechanical data to a browser dashboard over Wi-Fi.
-        </p>
+<section class="card" id="contact">
+  <h2>Contact</h2>
 
-        <ul>
-          <li>Reads accelerometer and gyroscope data using MPU-6050 and ESP32 over I2C</li>
-          <li>Implements angle estimation, motion detection, step counting, and cadence calculation</li>
-          <li>Hosts a real-time web dashboard using ESP32 Wi-Fi with live data visualization</li>
-        </ul>
+  <div class="contact-item">
+    <strong>Email:</strong>
+    <a href="mailto:YOUR_EMAIL_HERE">YOUR_EMAIL_HERE</a>
+  </div>
 
-        <h4>Hardware Prototype</h4>
-        <img
-          src="./hardware_setup.jpeg"
-          alt="ESP32 and MPU-6050 hardware prototype"
-          class="project-image"
-        >
+  <div class="contact-item">
+    <strong>GitHub:</strong>
+    <a href="https://github.com/espinozakevin0006-gif" target="_blank">
+      github.com/espinozakevin0006-gif
+    </a>
+  </div>
 
-        <h4>System Architecture</h4>
-        <img
-          src="./system_diagram.png"
-          alt="System diagram for the wearable ankle motion tracking system"
-          class="project-image"
-        >
+</section>
 
-        <h4>Live Dashboard</h4>
-        <img
-          src="./dashboard_screenshot.png"
-          alt="Live dashboard showing ankle tracker sensor data and plots"
-          class="project-image"
-        >
+<p class="footer-note">
+  Portfolio hosted with GitHub Pages
+</p>
 
-        <p>
-          <a
-            href="https://github.com/espinozakevin0006-gif/ankle-motion-tracker"
-            target="_blank"
-            class="button-link"
-          >
-            View Project Code
-          </a>
-        </p>
-      </div>
-
-      <div class="project">
-        <h3>Future Projects</h3>
-        <p class="summary">
-          This portfolio is structured to expand with additional embedded systems, robotics, and engineering projects.
-        </p>
-      </div>
-    </section>
-
-    <p class="footer-note">
-      Portfolio website hosted with GitHub Pages
-    </p>
-  </main>
+</main>
 </body>
 </html>
