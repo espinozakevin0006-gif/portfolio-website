@@ -8,8 +8,6 @@
   <style>
     * { box-sizing: border-box; }
 
-    html { scroll-behavior: smooth; }
-
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -28,13 +26,11 @@
     header h1 {
       margin: 0;
       font-size: 3rem;
-      font-weight: 700;
     }
 
     header p {
       max-width: 780px;
       margin: 18px auto 0;
-      font-size: 1.05rem;
       color: #dbeafe;
     }
 
@@ -56,27 +52,13 @@
       background: white;
       border-radius: 16px;
       padding: 32px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
       margin-bottom: 28px;
     }
 
     h2 {
-      font-size: 1.8rem;
-      margin-bottom: 18px;
-      color: #0f172a;
       border-bottom: 2px solid #e5e7eb;
       padding-bottom: 10px;
-    }
-
-    h3 {
-      font-size: 1.35rem;
-      margin-bottom: 10px;
-    }
-
-    h4 {
-      margin: 20px 0 10px;
-      font-size: 1rem;
-      color: #0f172a;
     }
 
     .skills-grid {
@@ -92,27 +74,11 @@
       border-radius: 10px;
     }
 
-    .project {
-      padding: 24px 0;
-      border-bottom: 1px solid #e5e7eb;
-    }
-
-    .summary {
-      margin-bottom: 14px;
-    }
-
-    ul {
-      padding-left: 22px;
-      margin-bottom: 18px;
-    }
-
-    li { margin-bottom: 6px; }
-
     .project-image {
       display: block;
       width: 100%;
       max-width: 760px;
-      margin: 12px auto 8px;
+      margin: 12px auto;
       border-radius: 12px;
       border: 1px solid #d1d5db;
       padding: 6px;
@@ -121,7 +87,7 @@
 
     .caption {
       text-align: center;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       color: #4b5563;
       margin-bottom: 20px;
     }
@@ -141,26 +107,11 @@
     }
 
     .contact-item {
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
-    .contact-item a {
-      color: #2563eb;
-      text-decoration: none;
-    }
+    a { color: #2563eb; text-decoration: none; }
 
-    .footer-note {
-      text-align: center;
-      color: #6b7280;
-      font-size: 0.9rem;
-      margin-top: 10px;
-    }
-
-    @media (min-width: 700px) {
-      .skills-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
   </style>
 </head>
 
@@ -168,10 +119,7 @@
 
 <header>
   <h1>Kevin Espinoza</h1>
-  <p>
-    Electrical Engineering student focused on embedded systems, robotics, and sensor-based hardware design.
-    Building real-time systems that connect sensing, computation, and physical interaction.
-  </p>
+  <p>Electrical Engineering student focused on embedded systems and robotics.</p>
 
   <div class="hero-buttons">
     <a href="#projects" class="button-link">View Projects</a>
@@ -184,8 +132,7 @@
 <section class="card">
   <h2>About</h2>
   <p>
-    I develop embedded systems that connect sensors, microcontrollers, and control logic into functional hardware prototypes.
-    My work focuses on real-time data acquisition and translating physical signals into meaningful system behavior.
+    I build embedded systems that integrate sensors, microcontrollers, and real-time processing into functional hardware prototypes.
   </p>
 </section>
 
@@ -195,27 +142,17 @@
 
     <div class="skill-group">
       <strong>Languages</strong><br>
-      C/C++<br>
-      Python<br>
-      Verilog
+      C/C++, Python, Verilog
     </div>
 
     <div class="skill-group">
       <strong>Tools</strong><br>
-      Arduino IDE<br>
-      GitHub<br>
-      Quartus<br>
-      ESP32<br>
-      Breadboarding
+      Arduino IDE, GitHub, Quartus, ESP32
     </div>
 
     <div class="skill-group">
       <strong>Concepts</strong><br>
-      Embedded systems<br>
-      Sensor interfacing<br>
-      Digital logic<br>
-      Real-time control<br>
-      Hardware-software integration
+      Embedded systems, I2C, real-time control
     </div>
 
   </div>
@@ -224,39 +161,28 @@
 <section class="card" id="projects">
   <h2>Projects</h2>
 
-  <div class="project">
-    <h3>Wearable Ankle Motion Tracking System</h3>
+  <h3>Wearable Ankle Motion Tracking System</h3>
 
-    <p class="summary">
-      Embedded wearable system that captures ankle motion using an IMU and streams real-time data to a browser dashboard over Wi-Fi.
-    </p>
+  <ul>
+    <li>IMU + ESP32 real-time motion tracking</li>
+    <li>Angle estimation, cadence detection</li>
+    <li>Wi-Fi dashboard visualization</li>
+  </ul>
 
-    <ul>
-      <li>MPU-6050 + ESP32 sensor integration over I2C</li>
-      <li>Angle estimation, motion detection, step counting, cadence</li>
-      <li>Real-time Wi-Fi dashboard with live data visualization</li>
-    </ul>
+  <img src="./hardware_setup.jpeg" class="project-image">
+  <div class="caption">Hardware prototype</div>
 
-    <h4>Hardware Prototype</h4>
-    <img src="./hardware_setup.jpeg" class="project-image">
-    <div class="caption">Breadboard prototype with ESP32 and MPU-6050</div>
+  <img src="./system_diagram.png" class="project-image">
+  <div class="caption">System architecture</div>
 
-    <h4>System Architecture</h4>
-    <img src="./system_diagram.png" class="project-image">
-    <div class="caption">Sensor → processing → Wi-Fi → dashboard flow</div>
+  <img src="./dashboard_screenshot.png" class="project-image">
+  <div class="caption">Live dashboard</div>
 
-    <h4>Live Dashboard</h4>
-    <img src="./dashboard_screenshot.png" class="project-image">
-    <div class="caption">Real-time visualization of motion data</div>
-
-    <div style="display:flex; gap:12px; flex-wrap:wrap;">
-  <a href="./ankle-tracker.html" class="button-link">View Project Page</a>
-  <a href="https://github.com/espinozakevin0006-gif/ankle-motion-tracker"
-     target="_blank"
-     class="button-link">
-    View Project Code
-  </a>
-</div>
+  <div style="display:flex; gap:10px;">
+    <a href="./ankle-tracker.html" class="button-link">View Project Page</a>
+    <a href="https://github.com/espinozakevin0006-gif/ankle-motion-tracker" target="_blank" class="button-link">
+      Code
+    </a>
   </div>
 
 </section>
@@ -265,22 +191,20 @@
   <h2>Contact</h2>
 
   <div class="contact-item">
-    <strong>Email:</strong>
-    <a href="mailto:espinozakevin0006@gmail.com">YOUR_EMAIL_HERE</a>
+    Email:
+    <a href="mailto:espinozakevin0006@gmail.com">
+      espinozakevin0006@gmail.com
+    </a>
   </div>
 
   <div class="contact-item">
-    <strong>GitHub:</strong>
+    GitHub:
     <a href="https://github.com/espinozakevin0006-gif" target="_blank">
       github.com/espinozakevin0006-gif
     </a>
   </div>
 
 </section>
-
-<p class="footer-note">
-  Portfolio hosted with GitHub Pages
-</p>
 
 </main>
 </body>
